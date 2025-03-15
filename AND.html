@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AND Gate Simulation with IC 7408</title>
+    <link rel="stylesheet" href="AND.css">
+    <link type="image/png" sizes="96x96" rel="icon" href="icons8-online-experiment-96.png">
+</head>
+<body>
+
+    <h2>AND Gate Simulation with IC 7408</h2>
+
+    <div class="circuit-container">
+
+        <!-- Inputs Row -->
+        <div class="row1">
+            <div class="image-container">
+                <img id="inputA" src="switchoff.png" alt="Input A" width="100" onclick="toggleInput('A')">
+                <p>Input A</p>
+            </div>
+            <div class="image-container">
+                <img id="inputB" src="switchoff.png" alt="Input B" width="100" onclick="toggleInput('B')">
+                <p>Input B</p>
+            </div>
+        </div>
+
+        <!-- IC 7408 AND Gate -->
+        <div class="row">
+            <div class="image-container">
+                <img src="IC_7408.jpg" alt="IC 7408 AND Gate" width="1050" height="750">
+            </div>
+        </div>
+
+        <!-- Output Row -->
+        <div class="row">
+            <div class="image-container">
+                <img id="bulb" src="bulb_off.png" alt="Bulb" width="150" height="370">
+                <p class="OB">Output (Bulb)</p>
+            </div>
+        </div>
+
+        <!-- Battery Row -->
+        <div class="row">
+            <div class="image-containerb">
+                <img id="battery" src="battery_disconnected.png" alt="Battery" width="100" onclick="toggleBattery()">
+                <p>Battery</p>
+                <p id="battery-status">CONNECTED</p> <!-- Green text when battery is connected -->
+            </div>
+        </div>
+
+        <!-- Output Text -->
+        <div id="result">Output: 0</div>
+
+        <!-- Buttons for Table Actions -->
+        <div class="resultbutton">
+        <button onclick="addToTable()">ADD TO TABLE</button>
+        <button onclick="resetTable()">RESET TABLE</button>
+        </div>
+
+        <!-- Truth Table -->
+        <h3 class="t">Truth Table</h3>
+        <table id="truthTable">
+            <tr>
+                <th>Input A</th>
+                <th>Input B</th>
+                <th>Battery Connected</th>
+                <th>Output</th>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        var inputA = 0;
+        var inputB = 0;
+        var batteryConnected = false;
+        var batteryAlertShown = false;
+
+        function toggleInput(input) {
+            if (!batteryConnected) {
+                alert("Please connect the battery first!");
+                return;
+            }
+
+            if (input === 'A') {
+                inputA = inputA === 0 ? 1 : 0;
+                document.getElementById('inputA').src = inputA ? 'switchon.png' : 'switchoff.png';
+            } else if (input === 'B') {
+                inputB = inputB === 0 ? 1 : 0;
+                document.getElementById('inputB').src = inputB ? 'switchon.png' : 'switchoff.png';
+            }
+            calculateAND();
+        }
+
+        function toggleBattery() {
+            batteryConnected = !batteryConnected;
+            document.getElementById('battery').src = batteryConnected ? 'battery_connected.png' : 'battery_disconnected.png';
+            document.getElementById('battery-status').style.display = batteryConnected ? 'block' : 'none';
+
+            if (batteryConnected && !batteryAlertShown) {
+                alert("Battery is now connected!");
+                batteryAlertShown = true;
+            }
+
+            calculateAND();
+        }
+
+        function calculateAND() {
+            var andResult = inputA & inputB;
+            var finalOutput = andResult && batteryConnected;
+
+            document.getElementById('result').textContent = "Output: " + finalOutput;
+            document.getElementById('bulb').src = finalOutput ? 'bulb_on.png' : 'bulb_off.png';
+        }
+
+        function addToTable() {
+            var table = document.getElementById("truthTable");
+            var newRow = table.insertRow(-1);
+            
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            cell1.innerHTML = inputA;
+            cell2.innerHTML = inputB;
+            cell3.innerHTML = batteryConnected ? "Yes" : "No";
+            cell4.innerHTML = (inputA & inputB) && batteryConnected ? "1 (True)" : "0 (False)";
+        }
+
+        function resetTable() {
+            var table = document.getElementById("truthTable");
+
+            // Keep the header row, remove all other rows
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+        }
+    </script>
+
+</body>
+</html>

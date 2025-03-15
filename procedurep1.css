@@ -1,0 +1,29 @@
+.probox{
+    position: relative;
+    height: 3060px;
+    width: 1200px;
+    align-content: center;
+    display: flex;
+    left: 300px;
+    bottom: 350px;
+
+}
+
+.prodata{
+    position: relative;
+    width: 1200px;
+    height: 3050px;
+}
+#PRO{
+    font-size: 40px;
+}
+#simulation{
+    font-size: 30px;
+}
+#gatess{
+    font-size: 35px;
+    color: black;
+}
+img{
+    vertical-align: middle;
+}

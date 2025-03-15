@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about basic digital logic gates - Theory and implementation details">
+    <title>Basic Gates Theory - Virtual Lab</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prac1.css">
+    <link type="image/png" sizes="96x96" rel="icon" href="icons8-online-experiment-96.png">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Home">
+                    <div class="logo" role="img" aria-label="Virtual Lab Logo"></div>
+                </a>
+            </div>
+            <div class="nav-wel">
+               <h1>WELCOME TO VIRTUAL LAB OF DIGITAL ELECTRONICS</h1> 
+            </div>
+        </nav>
+        <nav class="nav-sec" aria-label="Main navigation">
+            <div class="HOME border">
+                <a href="index.html">HOME</a>
+            </div>
+            <div class="ABOUTUS border">
+                <a href="aboutus.html">ABOUT US</a>
+            </div>
+            <div class="OBJECTIVE border">
+                <a href="objective.html">OBJECTIVE</a>
+            </div>
+            <div class="CONTACTUS border">
+                <a href="contactus.html">CONTACT US</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="practical-content">
+        <h2>BASIC GATES</h2>
+        
+        <div class="aim-box">
+            <nav class="topic" aria-label="Practical navigation">
+                <div class="aim">
+                    <a href="prac1.html">AIM</a>
+                </div>
+                <div class="theory active">
+                    <a href="theoryp1.html" aria-current="page">THEORY</a>
+                </div>
+                <div class="procedure">
+                    <a href="procedurep1.html">PROCEDURE</a>
+                </div>
+                <div class="simulation">
+                    <a href="simulationp1.html">SIMULATION</a>
+                </div>
+                <div class="conclusion">
+                    <a href="conclusionp1.html">CONCLUSION</a>
+                </div>
+            </nav>
+            
+            <div class="aim-contentbox">
+                <article class="theory-content">
+                    <h3>Introduction</h3>
+                    <p>Logic gates are the basic building blocks of any digital system. Logic gates are electronic circuits having one or more than one input and only one output. The relationship between the input and the output is based on a certain logic. Based on this, logic gates are named as:</p>
+                    
+                    <ul>
+                        <li>AND gate</li>
+                        <li>OR gate</li>
+                        <li>NOT gate</li>
+                        <li>NAND gate</li>
+                        <li>NOR gate</li>
+                        <li>Ex-OR gate</li>
+                        <li>Ex-NOR gate</li>
+                    </ul>
+
+                    <section class="gate-section">
+                        <h3>1. AND Gate</h3>
+                        <p>The AND gate is an electronic circuit that gives a high output (1) only if all its inputs are high. A dot (.) is used to show the AND operation i.e. A.B or can be written as AB</p>
+                        
+                        <figure>
+                            <img src="and.png" alt="AND Gate Logic Symbol" class="gate-image">
+                            <figcaption>Logic Symbol of AND Gate</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="AA.png" alt="AND Gate Truth Table" class="gate-image">
+                            <figcaption>Truth Table of AND Gate</figcaption>
+                        </figure>
+
+                        <p>A simple 2-input logic AND gate can be constructed using IC 7408</p>
+                        
+                        <figure>
+                            <img src="IC_7408.png" alt="IC 7408 Diagram" class="gate-image">
+                            <figcaption>IC 7408</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="gate-section">
+                        <h3>2. OR Gate</h3>
+                        <p>The OR gate is an electronic circuit that gives a high output (1) if one or more of its inputs are high. A plus (+) is used to show the OR operation.</p>
+                        
+                        <div class="equation">Y = A + B</div>
+
+                        <figure>
+                            <img src="or.png" alt="OR Gate Logic Symbol" class="gate-image">
+                            <figcaption>Logic Symbol of OR Gate</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="truth_or.png" alt="OR Gate Truth Table" class="gate-image">
+                            <figcaption>Truth Table of OR Gate</figcaption>
+                        </figure>
+
+                        <p>A simple 2-input logic OR gate can be constructed using IC 7432</p>
+                        
+                        <figure>
+                            <img src="7432or.gif" alt="IC 7432 Diagram" class="gate-image">
+                            <figcaption>IC 7432</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="gate-section">
+                        <h3>3. NOT Gate</h3>
+                        <p>The NOT gate is an electronic circuit that produces an inverted version of the input at its output. It is also known as an inverter. If the input variable is A, the inverted output is known as NOT A. This is also shown as A' or A with a bar over the top.</p>
+                        
+                        <div class="equation">Y = A'</div>
+
+                        <figure>
+                            <img src="not.png" alt="NOT Gate Logic Symbol" class="gate-image">
+                            <figcaption>Logic Symbol of NOT Gate</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="truth_not.png" alt="NOT Gate Truth Table" class="gate-image">
+                            <figcaption>Truth Table of NOT Gate</figcaption>
+                        </figure>
+
+                        <p>A simple 1-input logic NOT gate can be constructed using IC 7404</p>
+                        
+                        <figure>
+                            <img src="7404not.png" alt="IC 7404 Diagram" class="gate-image">
+                            <figcaption>IC 7404</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="gate-section">
+                        <h3>4. NAND Gate</h3>
+                        <p>This is a NOT-AND gate which is equal to an AND gate followed by a NOT gate. The outputs of all NAND gates are high if any of the inputs are low. The symbol is an AND gate with a small circle on the output. The small circle represents inversion.</p>
+                        
+                        <div class="equation">Y = <span class="overline">AB</span></div>
+
+                        <figure>
+                            <img src="nand.png" alt="NAND Gate Logic Symbol" class="gate-image">
+                            <figcaption>Logic Symbol of NAND Gate</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="truth_nand.png" alt="NAND Gate Truth Table" class="gate-image">
+                            <figcaption>Truth Table of NAND Gate</figcaption>
+                        </figure>
+
+                        <p>A simple 2-input logic NAND gate can be constructed using IC 7400</p>
+                        
+                        <figure>
+                            <img src="7400nand.png" alt="IC 7400 Diagram" class="gate-image">
+                            <figcaption>IC 7400</figcaption>
+                        </figure>
+                    </section>
+
+                    <section class="gate-section">
+                        <h3>5. NOR Gate</h3>
+                        <p>This is a NOT-OR gate which is equal to an OR gate followed by a NOT gate. The outputs of all NOR gates are low if any of the inputs are high. The symbol is an OR gate with a small circle on the output. The small circle represents inversion.</p>
+                        
+                        <div class="equation">Y = <span class="overline">A + B</span></div>
+
+                        <figure>
+                            <img src="nor.png" alt="NOR Gate Logic Symbol" class="gate-image">
+                            <figcaption>Logic Symbol of NOR Gate</figcaption>
+                        </figure>
+
+                        <figure>
+                            <img src="truth_nor.png" alt="NOR Gate Truth Table" class="gate-image">
+                            <figcaption>Truth Table of NOR Gate</figcaption>
+                        </figure>
+
+                        <p>A simple 2-input logic NOR gate can be constructed using IC 7402</p>
+                        
+                        <figure>
+                            <img src="7402nor.png" alt="IC 7402 Diagram" class="gate-image">
+                            <figcaption>IC 7402</figcaption>
+                        </figure>
+                    </section>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="quicklinks">
+            <h3>QUICK LINKS</h3>
+            <nav aria-label="Quick links">
+                <a href="#" class="feedback-link">FEEDBACK FORM</a>
+                <a href="FAQ.html">FAQ</a>
+            </nav>
+        </div>
+
+        <div class="aboutlab">
+            <h3>ABOUT VLAB</h3>
+            <nav aria-label="About Virtual Lab">
+                <a href="index.html">HOME</a>
+                <a href="aboutus.html">ABOUT US</a>
+                <a href="contactus.html">CONTACT US</a>
+            </nav>
+        </div>
+
+        <div class="scan">
+            <img src="Untitled.png" alt="QR Code for Virtual Lab" height="200">
+        </div>
+
+        <div class="data">
+            <h3>
+                THIS VIRTUAL LAB IS CREATED FOR COLLEGE AS MINI PROJECT BY:
+                <br>AYUSH SINGH
+                <br>ADARSH YADAV
+                <br>HIMANSHU YADAV
+            </h3>
+        </div>
+    </footer>
+
+    <style>
+    .theory-content {
+        padding: 2rem;
+    }
+
+    .theory-content h3 {
+        color: var(--primary-color);
+        margin: 2rem 0 1rem;
+        font-size: clamp(1.5rem, 2.5vw, 2rem);
+    }
+
+    .theory-content p {
+        margin: 1rem 0;
+        line-height: 1.8;
+    }
+
+    .theory-content ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 1rem 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .theory-content li {
+        background-color: var(--secondary-color);
+        color: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .theory-content li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .gate-section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .gate-image {
+        max-width: 100%;
+        height: auto;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    figure {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    figcaption {
+        color: #666;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .equation {
+        background-color: white;
+        padding: 1rem 2rem;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+        display: inline-block;
+        font-size: 1.2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+
+    .overline {
+        text-decoration: overline;
+    }
+
+    @media screen and (max-width: 768px) {
+        .theory-content {
+            padding: 1rem;
+        }
+
+        .gate-section {
+            padding: 1rem;
+            margin: 2rem 0;
+        }
+
+        .equation {
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .theory-content ul {
+            grid-template-columns: 1fr;
+        }
+
+        .gate-section {
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+    }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.topic a');
+            
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+
+            // Add animation to sections
+            const sections = document.querySelectorAll('.gate-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

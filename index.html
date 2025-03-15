@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Virtual Lab for Digital Electronics - Interactive practical experiments for students">
+    <title>VIRTUAL LAB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link type="image/png" sizes="96x96" rel="icon" href="icons8-online-experiment-96.png">
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-logo">
+                <a href="index.html" aria-label="Home">
+                    <div class="logo" role="img" aria-label="Virtual Lab Logo"></div>
+                </a>
+            </div>
+            <div class="nav-wel">
+               <h1>WELCOME TO VIRTUAL LAB OF DIGITAL ELECTRONICS</h1> 
+            </div>
+        </nav>
+        <nav class="nav-sec" aria-label="Main navigation">
+            <a href="index.html" class="nav-link" aria-current="page">HOME</a>
+            <a href="aboutus.html" class="nav-link">ABOUT US</a>
+            <a href="objective.html" class="nav-link">OBJECTIVE</a>
+            <a href="contactus.html" class="nav-link">CONTACT US</a>
+            <a href="FAQ.html" class="nav-link">FAQ</a>
+        </nav>
+        <div class="nav-search" role="search">
+            <label for="searchBar" class="visually-hidden">Search practicals</label>
+            <input type="text" id="searchBar" placeholder="SEARCH PRACTICALS..." class="search" autocomplete="off">
+            <button class="search-icon" aria-label="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <h2 class="list">
+            <u>LIST OF PRACTICALS</u>
+        </h2>
+
+        <section class="practicals" aria-label="List of practicals">
+            <article class="practical background">
+                <h3>BASIC GATES</h3>
+                <a href="prac1.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+
+            <article class="practical background">
+                <h3>UNIVERSALITY OF NAND/NOR GATES</h3>
+                <a href="prac2.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+
+            <article class="practical background">
+                <h3>ADDER (FULL AND HALF)</h3>
+                <a href="prac3.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+
+            <article class="practical background">
+                <h3>MULTIPLEXER</h3>
+                <a href="prac4.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+
+            <article class="practical background">
+                <h3>DEMULTIPLEXER</h3>
+                <a href="prac5.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+
+            <article class="practical background">
+                <h3>1 BIT COMPARATOR</h3>
+                <a href="prac6.html" class="start-btn" target="_main">START PRACTICAL</a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="quicklinks">
+            <h3>QUICK LINKS</h3>
+            <nav aria-label="Quick links">
+                <a href="#" class="feedback-link">FEEDBACK FORM</a>
+                <a href="FAQ.html">FAQ</a>
+            </nav>
+        </div>
+
+        <div class="aboutlab">
+            <h3>ABOUT VLAB</h3>
+            <nav aria-label="About Virtual Lab">
+                <a href="index.html">HOME</a>
+                <a href="aboutus.html">ABOUT US</a>
+                <a href="contactus.html">CONTACT US</a>
+            </nav>
+        </div>
+
+        <div class="scan">
+            <img src="Untitled.png" alt="QR Code for Virtual Lab" height="200">
+        </div>
+
+        <div class="data">
+            <h3>
+                THIS VIRTUAL LAB IS CREATED FOR COLLEGE AS MINI PROJECT BY:
+                <br>AYUSH SINGH
+                <br>ADARSH YADAV
+                <br>HIMANSHU YADAV
+            </h3>
+        </div>
+    </footer>
+
+    <style>
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchBar = document.getElementById('searchBar');
+            const practicals = document.querySelectorAll('.practical');
+            const searchButton = document.querySelector('.search-icon');
+
+            function performSearch() {
+                const filter = searchBar.value.toLowerCase();
+                practicals.forEach(practical => {
+                    const text = practical.textContent.toLowerCase();
+                    practical.style.display = text.includes(filter) ? '' : 'none';
+                });
+            }
+
+            searchBar.addEventListener('input', performSearch);
+            searchButton.addEventListener('click', performSearch);
+
+            // Add keyboard navigation
+            searchBar.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // Add animation class when practical cards come into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            practicals.forEach(practical => {
+                observer.observe(practical);
+            });
+        });
+    </script>
+</body>
+</html>

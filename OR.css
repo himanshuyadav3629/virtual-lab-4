@@ -1,0 +1,129 @@
+body { text-align: center; 
+    font-family: Arial, sans-serif; 
+}
+
+.circuit-container { 
+    display: flex;
+     flex-direction: column;
+      align-items: center;
+       margin-top: 20px; 
+    }
+.row { 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+.image-container {
+     cursor: pointer; 
+    text-align: center; 
+    margin: 20px; 
+    position: relative;
+    top: -330px;
+}
+#result { 
+    font-size: 24px; 
+    font-weight: bold; 
+    margin-top: 100px; 
+    position: relative;
+    left: 450px;
+    bottom: 1090px;
+}
+#battery-status {
+     font-size: 18px; 
+     font-weight: bold; 
+     color: green; 
+     display: none; 
+    }
+.wire { 
+    width: 80px; 
+    height: 5px; 
+    background-color: black; 
+    margin: 0 10px; 
+}
+table { 
+    width: 50%; 
+    margin: 20px auto; 
+    border-collapse: collapse; 
+}
+th, td { 
+    border: 1px solid black; 
+    padding: 10px; 
+    text-align: center; 
+}
+th { 
+    background-color: #ddd;
+ }
+button {
+     padding: 10px 15px; 
+     font-size: 16px; 
+     margin-top: 10px; 
+     cursor: pointer; 
+}
+#inputA{
+    position: relative;
+    left: 0px;
+    bottom: 35px;
+}
+.row1 {
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    left: -400px;
+    top: 850px;
+    z-index: 3;
+}
+#inputB{
+    position: relative;
+    bottom: 25px;
+}
+#bulb{
+    position: relative;
+    left: 450px;
+    bottom: 324px;
+}
+.image-containerb {
+    cursor: pointer;
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    bottom: 1402px;
+    left: 440px;
+}
+.OB{
+    position: relative;
+    left: 450px;
+    bottom: 470px;
+}
+.resultbutton{
+    position: relative;
+    bottom: 1150px;
+}
+.t{
+    font-size: 25px;
+    position: relative;
+    bottom: 1150px;
+}
+#truthTable{
+    position: relative;
+    bottom: 1150px;
+}
+.IA{
+    position: relative;
+    bottom: 25px;
+}
+.IB{
+    position: relative;
+    bottom: 20px;
+}
+h2{
+    background-color: #3DDA24;
+   padding-top: 30px;
+   text-align: center;
+   vertical-align: middle;
+   padding-bottom: 30px;
+   border: 2px solid;
+   border-radius: 20px;
+   font-size: 40px;
+   color: white;
+   }
